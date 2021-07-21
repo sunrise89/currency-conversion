@@ -1,0 +1,25 @@
+spring:
+  sleuth:
+    sampler:
+      probability: 1.0
+  config:
+    import: optional:configserver:http://localhost:8888
+  application:
+    name: currency-conversion-service
+#
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka
+
+server:
+  port: 8100
+  #ports - 8100, 8101, 8102
+
+find-fast:
+  client:
+    serviceUrl: http://localhost:8500/discovery-service
+    registrationPath: /registrations
+    healthCheckPath: /health
+
+
